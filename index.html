@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烟台理工学院 3D图片轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f0f4f8;
+            background-image: radial-gradient(#dce4ec 1px, transparent 1px);
+            background-size: 30px 30px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            perspective: 1300px;
+            font-family: "微软雅黑", sans-serif;
+        }
+        .top-title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #1a5276;
+            letter-spacing: 6px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .wrap {
+            width: 580px;
+            height: 320px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateX 45s linear infinite;
+        }
+        @keyframes rotateX {
+            0% { transform: rotateX(0deg); }
+            100% { transform: rotateX(2160deg); }
+        }
+        .wrap .pic {
+            position: absolute;
+            width: 580px;
+            height: 320px;
+            left: 0;
+            top: 0;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border: 4px solid #fff;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+        .wrap .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .wrap .pic:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(44, 62, 80, 0.25);
+        }
+        .text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .pic:nth-child(1){transform: rotateX(0deg) translateZ(320px);}
+        .pic:nth-child(2){transform: rotateX(60deg) translateZ(320px);}
+        .pic:nth-child(3){transform: rotateX(120deg) translateZ(320px);}
+        .pic:nth-child(4){transform: rotateX(180deg) translateZ(320px);}
+        .pic:nth-child(5){transform: rotateX(240deg) translateZ(320px);}
+        .pic:nth-child(6){transform: rotateX(300deg) translateZ(320px);}
+    </style>
+</head>
+<body>
+    <div class="top-title">美丽的烟台理工校园</div>
+    <div class="wrap">
+        <div class="pic">
+            <img src="图片1.jpg" alt="校园风景">
+            <div class="text">烟台理工 · 校园正门</div>
+        </div>
+        <div class="pic">
+            <img src="图片2.jpg" alt="校园风景">
+            <div class="text">烟台理工 · 教学楼</div>
+        </div>
+        <div class="pic">
+            <img src="图片3.jpg" alt="校园风景">
+            <div class="text">烟台理工 · 图书馆</div>
+        </div>
+        <div class="pic">
+            <img src="图片4.jpg" alt="校园风景">
+            <div class="text">烟台理工 · 林荫大道</div>
+        </div>
+        <div class="pic">
+            <img src="图片5.jpg" alt="校园风景">
+            <div class="text">烟台理工 · 人工湖畔</div>
+        </div>
+        <div class="pic">
+            <img src="图片6.jpg" alt="校园风景">
+            <div class="text">烟台理工 · 休闲广场</div>
+        </div>
+    </div>
+</body>
+</html>
